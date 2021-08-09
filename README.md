@@ -93,6 +93,6 @@ As an example, here I'm using it in `maven-shade-plugin` to change the file name
 the final jar file going to look like this: `test-1.0.0.jar`
 
 # Common issues
- - Sometimes maven is going to reject the property `${autoincrement.version}`.<br> but don't worry, in the building process maven is going to recognize this property. you can suppress the error by adding this line on top of the property like in shown picture.
+ - Sometimes maven might not recognize the property `${autoincrement.version}` and highlight it as an error.<br> but don't worry, in the building process maven is going to recognize this property. you can suppress the error by adding this line on top of the property like in shown picture.
 <br>![image](https://i.ibb.co/0n56gWC/Capture.png) <br>
  copy and paste: `<!--suppress UnresolvedMavenProperty -->` 

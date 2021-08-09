@@ -21,7 +21,7 @@ add this inside `<build>` tag
    <version>1.0.0</version>
   </plugin>
 ```
-#Plugin compatibility with Java
+# Plugin compatibility with Java
 Here is an overview of the current plugin compatibility with Java
 
 | Plugin Version  | Required Java Version |

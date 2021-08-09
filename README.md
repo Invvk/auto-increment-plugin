@@ -95,4 +95,8 @@ the final jar file going to look like this: `test-1.0.0.jar`
 # Common issues
  - Sometimes maven might not recognize the property `${autoincrement.version}` and highlight it as an error.<br> but don't worry, in the building process maven is going to recognize this property. you can suppress the error by adding this line on top of the property like in shown picture.
 <br>![image](https://i.ibb.co/0n56gWC/Capture.png) <br>
- copy and paste: `<!--suppress UnresolvedMavenProperty -->` 
+ copy and paste: `<!--suppress UnresolvedMavenProperty -->`
+ 
+ # Licenses
+ This project uses [GNU General Public License v3.0](https://github.com/Invvk/auto-increment-plugin/blob/main/LICENSE).
+ full artical on this license can be found [**here**](https://www.gnu.org/licenses/gpl-3.0.html)

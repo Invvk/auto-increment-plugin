@@ -27,7 +27,7 @@ there is no commands required a simple `mvn clean package` or `mvn clean install
 <build>
  .....
  </plugin>
-  <groupId>me.invvk</groupId>
+  <groupId>io.github.invvk</groupId>
   <artifactId>auto-increment-plugin</artifactId>
   <version>1.0.0</version>
   <executions>

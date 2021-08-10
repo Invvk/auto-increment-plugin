@@ -1,4 +1,6 @@
 # auto-increment-plugin
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.invvk/auto-increment-plugin.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22io.github.invvk%22%20AND%20a:%22auto-increment-plugin%22)<br>
+
 Maven plugin that automatically increases the version number accordingly, it support commit hash too!
 
 # How it works

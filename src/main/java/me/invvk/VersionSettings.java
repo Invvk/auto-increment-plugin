@@ -26,8 +26,8 @@ public class VersionSettings {
         return instance.storageName;
     }
 
-    public boolean isIncludeBuildNumber() {
-        return this.instance.includeBuildNumber;
+    public boolean isIncludePatch() {
+        return this.instance.includePatch;
     }
 
     public boolean isIncludeHash() {
@@ -43,7 +43,7 @@ public class VersionSettings {
     }
 
     public int getBuildNumberLimit() {
-        return this.instance.buildNumLimit;
+        return this.instance.patchLimit;
     }
 
     public int getMinorLimit() {

@@ -1,4 +1,4 @@
-package me.invvk;
+package io.github.invvk;
 
 import java.io.File;
 

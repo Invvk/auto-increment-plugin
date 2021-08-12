@@ -1,4 +1,4 @@
-package me.invvk.file;
+package io.github.invvk.file;
 
 import org.apache.maven.plugin.MojoExecutionException;
 

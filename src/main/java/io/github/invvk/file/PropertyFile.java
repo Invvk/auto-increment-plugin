@@ -1,4 +1,4 @@
-package me.invvk.file;
+package io.github.invvk.file;
 
 import java.io.File;
 import java.io.FileOutputStream;

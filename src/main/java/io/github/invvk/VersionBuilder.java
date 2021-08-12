@@ -1,7 +1,7 @@
-package me.invvk;
+package io.github.invvk;
 
-import me.invvk.file.GitFile;
-import me.invvk.file.PropertyFile;
+import io.github.invvk.file.PropertyFile;
+import io.github.invvk.file.GitFile;
 import org.apache.maven.plugin.MojoExecutionException;
 
 import java.io.IOException;

@@ -11,7 +11,7 @@ public class PropertyFile {
     private final Properties properties = new Properties();
     private final File file;
 
-    public final String MAJOR = "major", MINOR = "minor", BUILD_NUMBER = "buildNum";
+    public final String MAJOR = "major", MINOR = "minor", PATCH = "patch";
 
     public PropertyFile(File basedir, String fileName) throws IOException {
         file = new File(basedir, fileName.endsWith(".properties") ? fileName : fileName + ".properties");
@@ -38,8 +38,13 @@ public class PropertyFile {
             changed = true;
         }
 
-        if (properties.getProperty(this.BUILD_NUMBER) == null) {
-            properties.setProperty(this.BUILD_NUMBER, "0");
+        if (properties.getProperty(this.PATCH) == null) {
+            String BUILD_NUMBER = "buildNum";
+            if (properties.getProperty(BUILD_NUMBER) != null) {
+                properties.setProperty(this.PATCH, properties.getProperty(BUILD_NUMBER));
+                properties.remove(BUILD_NUMBER);
+            } else
+                properties.setProperty(this.PATCH, "0");
             changed = true;
         }
 
@@ -64,8 +69,8 @@ public class PropertyFile {
         return this.properties.getProperty(this.MINOR);
     }
 
-    public String getBuildNumber() {
-        return this.properties.getProperty(this.BUILD_NUMBER);
+    public String getPatch() {
+        return this.properties.getProperty(this.PATCH);
     }
 
     public void modify(String key, String value) {

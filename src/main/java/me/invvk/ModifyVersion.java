@@ -66,7 +66,7 @@ public class ModifyVersion extends AbstractMojo {
             log("major version is " + builder.getMajor());
             log("minor version is " + builder.getMinor());
             log("patch version is " + builder.getPatchNum());
-            log("full version is " + builder.getFinalVersion());
+            log("commit hash is " + builder.getCommitHash());
         }
     }
 

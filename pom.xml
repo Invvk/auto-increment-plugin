@@ -12,7 +12,6 @@
     <name>Version auto increment Plugin</name>
     <description>
         Maven plugin that automatically increases the version number accordingly, it support commit hash too!
-        This plugin isn't meant for big projects rather than small ones.
     </description>
     <url>https://github.com/Invvk/auto-increment-plugin</url>
 

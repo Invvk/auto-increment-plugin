@@ -70,9 +70,14 @@ public class ModifyVersion extends AbstractMojo {
         }
     }
 
-    private void log(String message) {
+    public void log(String message) {
         if (log)
             getLog().info(message);
+    }
+
+    public void error(String message, Throwable e) {
+        if (log)
+            getLog().error(message, e);
     }
 
 }

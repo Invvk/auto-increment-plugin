@@ -66,11 +66,13 @@ public class VersionBuilder {
             try {
                 GitFile git = new GitFile(this.settings.getGit());
                 this.commitHash = this.settings.isShortHash() ? git.getShortCommitHash() : git.getCommitHash();
-                if (this.settings.isIncludeHash())
-                    builder.append("-").append(this.commitHash);
             } catch (MojoExecutionException e) {
-                e.printStackTrace();
+                settings.getInstance().error("Failed to load git file, hash commit will be ignored", e);
+                this.commitHash = "";
             }
+
+            if (this.settings.isIncludeHash())
+                builder.append("-").append(this.commitHash);
 
             this.finalVersion = builder.toString();
 

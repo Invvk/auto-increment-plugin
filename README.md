@@ -44,7 +44,7 @@ Here is an overview of the current plugin compatibility with Java
 <br>![image](https://i.ibb.co/vVB6vXG/Capture.png) <br>
  copy and paste: `<!--suppress UnresolvedMavenProperty -->`
  
- - **Problem: Commit has isn't appearing in split mode (`aip.git.commit`) or in `aip.version.full`**
+ - **Problem: Commit has isn't appearing in (`aip.git.commit`) or in `aip.version.full`**
    - **Solution:** Make sure that your project is linked up with a git repository and it contains `.git` directory. Also, Make sure that you don't have `disableGit` option enabled.
  # Licenses
  This project uses [GNU General Public License v3.0](https://github.com/Invvk/auto-increment-plugin/blob/main/LICENSE).

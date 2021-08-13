@@ -6,7 +6,7 @@
 
     <groupId>io.github.invvk</groupId>
     <artifactId>auto-increment-plugin</artifactId>
-    <version>1.1.0-TEST</version>
+    <version>1.1.0</version>
     <packaging>maven-plugin</packaging>
 
     <name>Version auto increment Plugin</name>

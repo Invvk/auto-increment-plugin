@@ -4,6 +4,8 @@ import io.github.invvk.Options;
 import io.github.invvk.module.Manager;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.util.Properties;
 
 // Auto increment module
@@ -24,7 +26,9 @@ public class AIManager extends Manager {
     @SuppressWarnings("ResultOfMethodCallIgnored")
     @Override
     public void init() {
-        try (BufferedReader reader = new BufferedReader(new FileReader(propertyFile))) {
+        try (BufferedReader reader = new BufferedReader(
+                new InputStreamReader(new FileInputStream(this.propertyFile),
+                StandardCharsets.UTF_8))) {
             // Check if file exists, create
             if (propertyFile.exists())
                 propertyFile.createNewFile();

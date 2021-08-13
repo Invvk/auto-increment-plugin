@@ -1,12 +1,14 @@
 package io.github.invvk;
 
+import org.apache.commons.io.FilenameUtils;
+
 import java.io.File;
 
 public class Options {
 
     private final AIPMojo mojo;
 
-    private final boolean patch, commit, pump;
+    private final boolean patch, commit, pump, disableGit;
     private final int patchLimit, minorLimit, commitLength;
     private final File gitDir;
     private final String fileName;
@@ -23,7 +25,8 @@ public class Options {
         this.minorLimit = mojo.minorLimit;
         this.commitLength = mojo.commitLength;
         this.gitDir = mojo.gitDirectory;
-        this.fileName = mojo.fileName;
+        this.disableGit = mojo.disableGit;
+        this.fileName = mojo.fileName.endsWith(".properties") ? mojo.fileName : mojo.fileName + ".properties";
     }
 
     public AIPMojo getMojo() {
@@ -54,11 +57,15 @@ public class Options {
         return commitLength;
     }
 
+    public boolean isGitDisabled() {
+        return disableGit;
+    }
+
     public File getGitDir() {
         return gitDir;
     }
 
     public String getFileName() {
-        return fileName;
+        return FilenameUtils.getName(this.fileName);
     }
 }

@@ -18,8 +18,7 @@ public class AIManager extends Manager {
 
     public AIManager(Options options) {
         super(options);
-        this.propertyFile = new File(options.getMojo().getProject().getBasedir(), options.getFileName().endsWith(".properties") ?
-                options.getFileName() : options.getFileName() + ".properties");
+        this.propertyFile = new File(options.getMojo().getProject().getBasedir(), options.getFileName());
     }
 
     @SuppressWarnings("ResultOfMethodCallIgnored")
@@ -60,13 +59,9 @@ public class AIManager extends Manager {
             changed = true;
         }
 
-        if (changed) {
-            try (FileOutputStream stream = new FileOutputStream(propertyFile)) {
-                properties.store(stream, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
+        if (changed)
+            this.save();
+
         this.load();
     }
 
@@ -76,7 +71,7 @@ public class AIManager extends Manager {
             this.minor = Integer.parseInt(this.properties.getProperty(this.MINOR));
             this.patch = Integer.parseInt(this.properties.getProperty(this.PATCH));
         } catch (NumberFormatException e) {
-            this.options.getMojo().getLog().error("Major, Minor, and Patch must be numbers only!", e);
+            this.options.getMojo().getLog().error("Major, Minor, and Patch must be numbers only!");
         }
     }
 
@@ -120,7 +115,7 @@ public class AIManager extends Manager {
         try (FileOutputStream stream = new FileOutputStream(this.propertyFile)) {
             this.properties.store(stream, null);
         } catch (IOException e) {
-            e.printStackTrace();
+            this.options.getMojo().getLog().error("Error, failed to save file.");
         }
     }
 

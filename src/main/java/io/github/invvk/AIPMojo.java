@@ -39,6 +39,9 @@ public class AIPMojo extends AbstractMojo {
     @Parameter(defaultValue = "true", property = "aip.pump")
     protected boolean pump;
 
+    @Parameter(defaultValue = "false", property = "aip.disableGit")
+    protected boolean disableGit;
+
     public MavenProject getProject() {
         return project;
     }

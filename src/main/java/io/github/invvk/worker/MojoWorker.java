@@ -80,7 +80,8 @@ public class MojoWorker {
         project.getProperties().put("aip.version.patch", String.valueOf(ai.getPatch()));
 
         if (git.isGitEnabled()) {
-            project.getProperties().put("aip.git.commit", git.getCommit());
+            project.getProperties().put("aip.git.commit.full", git.getCommit());
+            project.getProperties().put("aip.git.commit.cut", git.getCutCommit());
             project.getProperties().put("aip.git.time", String.valueOf(git.getTime()));
             project.getProperties().put("aip.git.branch", git.getBranch());
         }

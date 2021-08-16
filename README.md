@@ -20,7 +20,7 @@ add this inside `<build>` tag
 <plugin>
   <groupId>io.github.invvk</groupId>
   <artifactId>auto-increment-plugin</artifactId>
-  <version>1.1.0</version>
+  <version>1.1.1</version>
   <executions>
       <execution>
           <goals>
@@ -36,7 +36,7 @@ Here is an overview of the current plugin compatibility with Java
 | Plugin Version  | Required Java Version |
 | --------------- | ---------------------:|
 | 1.0.X           | Java 1.8              |
-| 1.1.0           | Java 1.8              |
+| 1.1.X           | Java 1.8              |
 
 # Common issues
  - **Problem: Sometimes maven might not recognize the property `${aip.version.full}` and highlight it as an error.**

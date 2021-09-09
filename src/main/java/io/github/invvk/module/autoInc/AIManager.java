@@ -21,6 +21,14 @@ public class AIManager extends Manager {
     public AIManager(Options options) {
         super(options);
         this.propertyFile = new File(options.getMojo().getProject().getBasedir(), options.getFileName());
+
+        try {
+            if (!this.propertyFile.exists())
+                this.propertyFile.createNewFile();
+        } catch (IOException e) {
+            this.options.getMojo().getLog().error("Couldn't create the property file");
+        }
+
     }
 
     @SuppressWarnings("ResultOfMethodCallIgnored")
